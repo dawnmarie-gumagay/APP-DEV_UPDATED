@@ -35,8 +35,6 @@ public class UserService {
 					
 			//update the record
 			user.setUsername(newUserDetails.getUsername());
-			user.setFname(newUserDetails.getFname());
-			user.setLname(newUserDetails.getLname());
 			user.setEmail(newUserDetails.getEmail());
 			user.setPassword(newUserDetails.getPassword());						
 					

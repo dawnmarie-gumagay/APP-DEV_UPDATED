@@ -19,12 +19,6 @@ private int sid;
 	@Column(name = "username")
 	private String username;
 	
-	@Column(name = "firstname")
-	private String fname;
-	
-	@Column(name = "lastname")
-	private String lname;
-	
 	@Column(name = "password")
 	private String password;
 	
@@ -40,13 +34,11 @@ private int sid;
 		super();
 	}
 
-	public UserEntity(int sid, String username, String fname, String lname, String password, String email,
+	public UserEntity(int sid, String username, String password, String email,
 			boolean isDeleted, boolean isAdmin) {
 		super();
 		this.sid = sid;
 		this.username = username;
-		this.fname = fname;
-		this.lname = lname;
 		this.password = password;
 		this.email = email;
 		this.isDeleted = isDeleted;
@@ -67,22 +59,6 @@ private int sid;
 
 	public void setUsername(String username) {
 		this.username = username;
-	}
-
-	public String getFname() {
-		return fname;
-	}
-
-	public void setFname(String fname) {
-		this.fname = fname;
-	}
-
-	public String getLname() {
-		return lname;
-	}
-
-	public void setLname(String lname) {
-		this.lname = lname;
 	}
 
 	public String getPassword() {
