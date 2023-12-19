@@ -27,7 +27,8 @@ private int sid;
 	
 	@Column(name = "is_deleted")
 	private boolean isDeleted = false;
-	
+
+	@Column(name = "isAdmin")
 	private boolean isAdmin;
 
 	public UserEntity() {
@@ -93,5 +94,4 @@ private int sid;
 		this.isAdmin = isAdmin;
 	}
 	
-
 }

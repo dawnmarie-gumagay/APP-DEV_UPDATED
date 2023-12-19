@@ -11,15 +11,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/feedback")
+@CrossOrigin(origins = ("http://localhost:3000"))
 public class FeedbackController {
 
     @Autowired
-    private final FeedbackService feedbackService;
+    FeedbackService feedbackService;
 
-    public FeedbackController(FeedbackService feedbackService) {
-        this.feedbackService = feedbackService;
-    }
+    @GetMapping("/print")
+	public String itWorks() {
+		return "It works";
+	}
 
+    //create
     @PostMapping("/submit")
     public ResponseEntity<FeedbackEntity> submitFeedback(@RequestBody FeedbackEntity feedback) {
         try {
@@ -33,6 +36,7 @@ public class FeedbackController {
         }
     }
     
+    //read
     @GetMapping("/getAll")
     public ResponseEntity<List<FeedbackEntity>> getAllFeedback() {
         try {
@@ -45,6 +49,8 @@ public class FeedbackController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
+
+    //update
     @PutMapping("/updateFeedback/{feedbackId}")
     public ResponseEntity<FeedbackEntity> updateFeedback(
             @PathVariable Long feedbackId,
@@ -58,6 +64,7 @@ public class FeedbackController {
         }
     }
 
+    //delete
     @DeleteMapping("/deleteFeedback/{feedbackId}")
     public ResponseEntity<String> deleteFeedback(@PathVariable Long feedbackId) {
         try {

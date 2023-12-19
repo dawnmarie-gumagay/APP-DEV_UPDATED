@@ -1,11 +1,9 @@
-	package com.csit321g4.gumagay.Service;
+package com.csit321g4.gumagay.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.csit321g4.gumagay.Entity.UserEntity;
 import com.csit321g4.gumagay.Repository.UserRepository;
-
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -62,4 +60,9 @@ public class UserService {
 			
 		}
 	}
+
+	// Get user by username
+    public UserEntity getUserByUsername(String username) {
+        return urepo.findByUsername(username);
+    }
 }

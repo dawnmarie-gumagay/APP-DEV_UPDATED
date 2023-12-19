@@ -7,6 +7,6 @@ import com.csit321g4.gumagay.Entity.UserEntity;
 
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Integer>{
-
+public interface UserRepository extends JpaRepository<UserEntity, Integer> {
+    UserEntity findByUsername(String username);
 }
